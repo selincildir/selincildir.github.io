@@ -314,6 +314,44 @@
             margin-top: 30px;
         }
 
+        /* Projects Section Styles */
+        .projects-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--background-color);
+            border-left: 5px solid var(--highlight-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-card h3 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+            color: var(--text-color);
+        }
+
+        .project-card strong {
+            color: var(--secondary-color);
+        }
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -390,17 +428,31 @@
                 </div>
             </div>
         </section>
- <!-- Projects Section -->
- <section id="projects">
+<!-- Projects Section -->
+<section id="projects">
     <h2>Projects</h2>
-    <ul>
-        <li><strong>Genetic demultiplexing of scRNA-Seq data to investigate immune function</strong> - Ongoing<br>
-            <em>Supervisor: Dr Nick Warnock, Centre for Cancer Biology, Adelaide, South Australia, Australia</em>
-        </li>
-        <li><strong>Harnessing Machine Learning and Bioinformatics to Illuminate Prognostic Biomarkers in Hematological Malignancies</strong> - Ongoing<br>
-            <em>Supervisor: A/Prof Chung Hoow Kok, Centre for Cancer Biology, Adelaide, South Australia, Australia</em>
-        </li>
-    </ul>
+    <div class="projects-container">
+        <div class="project-card">
+            <h3>Harnessing Machine Learning and Bioinformatics to Illuminate Prognostic Biomarkers in Hematological Malignancies</h3>
+            <p><strong>Status:</strong> Ongoing</p>
+            <p><strong>Supervisor:</strong> A/Prof. Chung Hoow Kok, Centre for Cancer Biology, Adelaide, South Australia, Australia</p>
+            <p><strong>Summary:</strong> Applying machine learning and bioinformatics techniques to identify prognostic biomarkers in hematological malignancies. The project involves data preprocessing, feature selection, model development, and validation using computational tools such as Python, R, and machine learning frameworks.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Investigating Immune Function in IKKα: T and B Cell Profiling in Health and Disease via Genetic Demultiplexing of scRNA-Seq</h3>
+            <p><strong>Status:</strong> Completed</p>
+            <p><strong>Supervisor:</strong> Dr. Nick Warnock, Centre for Cancer Biology, Adelaide, South Australia, Australia</p>
+            <p><strong>Summary:</strong>This study employed single-cell RNA sequencing (scRNA-seq) and genetic demultiplexing to investigate immune function in individuals with the G167R homozygous germline mutation in the IKKα (CHUK) gene (chr10:100219335). Peripheral blood mononuclear cells (PBMCs) were used for both bulk RNA-seq and scRNA-seq experiments, with bulk RNA-seq serving as a genetic reference to assign cells to their respective donors (HC1, HC2, HC3, Patient1) in the scRNA-seq dataset. The pipeline involved STAR for bulk RNA-seq read alignment, VarDict for SNP calling from bulk RNA-seq, and cellSNP-lite for SNP calling from scRNA-seq. Vireo was then used to demultiplex pooled scRNA-seq samples based on the detected SNPs. The Cell Ranger Multi Pipeline (v9.0.0) was implemented to generate the feature-barcode matrix, which was subsequently analyzed using Seurat in R. The study applied various R packages, including dplyr for data manipulation, ggplot2 and patchwork for visualization, scDblFinder for doublet detection, Azimuth for cell type annotation, and tibble for structured data handling. The primary objective was to analyze T and B cell heterogeneity and perform cell-type-specific differential gene expression analysis, focusing on the impact of the homozygous CHUK mutation on NF-κB signaling, immune cell composition, and transcriptional differences across healthy and disease conditions.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Smart Manufacturing Dashboard: An Intuitive Web App for Monitoring and Managing Factory Operations</h3>
+            <p><strong>Status:</strong> Completed</p>
+            <p><strong>Supervisor:</strong> Dr. Brett Wilkinson, Senior Lecturer in Computer Science and Information Technology, Flinders University, Adelaide, South Australia, Australia</p>
+            <p><strong>Summary:</strong>Developed a web-based dashboard for real-time monitoring and management of factory operations, designed for Administrators, Factory Managers, Production Operators, and Auditors. The platform provides CRUD (Create, Read, Update, Delete) functionalities for managing machines, jobs, and maintenance requests, featuring real-time alerts and performance analytics to support data-driven decision-making. This project was undertaken as part of the "Human Factors for Interactive and Web-Based Systems" topic during my second year in the Bachelor of Science degree at Flinders University. Collaborating with a team of four peers, we built and deployed the web application within three months, utilizing: Technologies HTML, PHP, JavaScript, SQL; Deployment: XAMPP server; Collaboration Platforms: GitHub, Miro. The project successfully demonstrated team-based software development, UI/UX considerations, and real-time data integration in a manufacturing context.</p>
+        </div>
+    </div>
 </section>
         <!-- Research Interests Section -->
         <section id="research">
