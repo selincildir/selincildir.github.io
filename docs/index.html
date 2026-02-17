@@ -4,55 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selin Cildir - Academic Profile</title>
+
+    <!-- Preconnect for Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts - Crimson Pro (headings) & Inter (body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
     <style>
         /* ==================== CSS VARIABLES ==================== */
         :root {
-            /* Color Palette */
-            --primary-color: #2E3B55;
-            --secondary-color: #3D5A80;
-            --accent-color: #98C1D9;
-            --light-accent: #E0FBFC;
-            --text-color: #293241;
-            --background-color: #F5F7FA;
-            --border-color: #E2E8F0;
-            --highlight-color: #EE6C4D;
+            /* Jewel Tone Colors */
+            --primary-purple: #6B46C1;
+            --primary-purple-dark: #553C9A;
+            --primary-purple-light: #9F7AEA;
 
-            /* Spacing Scale */
+            --teal: #0D9488;
+            --teal-dark: #0F766E;
+            --teal-light: #5EEAD4;
+
+            --emerald: #059669;
+            --emerald-dark: #047857;
+            --emerald-light: #A7F3D0;
+
+            /* Neutrals */
+            --neutral-900: #1F2937;
+            --neutral-700: #374151;
+            --neutral-500: #6B7280;
+            --neutral-300: #D1D5DB;
+            --neutral-100: #F3F4F6;
+            --neutral-50: #F9FAFB;
+            --white: #FFFFFF;
+
+            /* Semantic Colors */
+            --text-primary: var(--neutral-900);
+            --text-secondary: var(--neutral-700);
+            --bg-main: var(--white);
+            --bg-secondary: var(--neutral-50);
+            --accent: var(--primary-purple);
+
+            /* Spacing */
             --space-xs: 0.5rem;
             --space-sm: 1rem;
             --space-md: 1.5rem;
             --space-lg: 2rem;
-            --space-xl: 2.5rem;
-            --space-2xl: 3rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
 
-            /* Typography Scale */
-            --font-size-sm: 0.875rem;
-            --font-size-base: 1rem;
-            --font-size-lg: 1.125rem;
-            --font-size-xl: 1.25rem;
-            --font-size-2xl: 1.5rem;
-            --font-size-3xl: 1.875rem;
-            --font-size-4xl: 2.25rem;
+            /* Typography */
+            --font-heading: 'Crimson Pro', serif;
+            --font-body: 'Inter', sans-serif;
 
-            /* Shadow Scale */
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
-            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-
-            /* Border Radius */
-            --radius-sm: 4px;
-            --radius-md: 8px;
-            --radius-lg: 12px;
-            --radius-full: 9999px;
+            /* Sidebar */
+            --sidebar-width: 280px;
 
             /* Transitions */
-            --transition-fast: 150ms;
-            --transition-base: 250ms;
-            --transition-slow: 350ms;
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-full: 9999px;
         }
 
         /* ==================== RESET & BASE STYLES ==================== */
@@ -68,201 +94,239 @@
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            color: var(--text-color);
-            background-color: var(--background-color);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--bg-secondary);
+            overflow-x: hidden;
         }
 
-        /* ==================== FOCUS STYLES (ACCESSIBILITY) ==================== */
-        *:focus-visible {
-            outline: 2px solid var(--highlight-color);
-            outline-offset: 2px;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            line-height: 1.2;
+            font-weight: 700;
         }
 
-        nav a:focus-visible {
-            background-color: var(--light-accent);
-            outline-color: var(--secondary-color);
-            border-radius: var(--radius-sm);
+        p {
+            margin-bottom: var(--space-md);
+            line-height: 1.7;
         }
 
-        .contact-link:focus-visible,
-        .email-container a:focus-visible {
-            outline: 2px solid var(--highlight-color);
-            outline-offset: 2px;
-        }
-
-        /* ==================== SKIP LINK (ACCESSIBILITY) ==================== */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--highlight-color);
-            color: white;
-            padding: 0.5rem 1rem;
+        a {
+            color: inherit;
             text-decoration: none;
-            border-radius: 0 0 var(--radius-sm) 0;
-            z-index: 2000;
-            font-weight: 500;
         }
 
-        .skip-link:focus {
+        /* ==================== SIDEBAR ==================== */
+        .sidebar {
+            position: fixed;
+            left: 0;
             top: 0;
+            height: 100vh;
+            width: var(--sidebar-width);
+            background: linear-gradient(180deg, var(--primary-purple) 0%, var(--primary-purple-dark) 100%);
+            color: var(--white);
+            overflow-y: auto;
+            z-index: 1000;
+            box-shadow: var(--shadow-xl);
         }
 
-        /* ==================== LAYOUT ==================== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+        .sidebar-content {
+            padding: var(--space-xl) var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
         }
 
-        /* ==================== HEADER & NAVIGATION ==================== */
-        .header-wrapper {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        .profile-section {
+            text-align: center;
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .profile-image {
+            width: 140px;
+            height: 140px;
+            border-radius: var(--radius-full);
+            border: 4px solid var(--teal-light);
+            margin: 0 auto var(--space-md);
+            box-shadow: var(--shadow-lg);
+            transition: transform var(--transition-base);
+            display: block;
+            object-fit: cover;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
+        }
+
+        .profile-name {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: var(--space-xs);
+        }
+
+        .profile-title,
+        .profile-institution {
+            font-size: 0.875rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .profile-institution {
+            color: var(--teal-light);
+            font-weight: 500;
+            margin-top: var(--space-xs);
+        }
+
+        /* Sidebar Navigation */
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xs);
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            padding: var(--space-sm) var(--space-md);
+            border-radius: var(--radius-md);
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: all var(--transition-base);
             position: relative;
             overflow: hidden;
         }
 
-        header {
-            color: white;
-            padding: var(--space-lg) 5%;
-            text-align: center;
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--teal-light);
+            transform: scaleY(0);
+            transition: transform var(--transition-base);
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: rgba(255, 255, 255, 0.1);
+            padding-left: calc(var(--space-md) + 8px);
+        }
+
+        .nav-link:hover::before,
+        .nav-link.active::before {
+            transform: scaleY(1);
+        }
+
+        /* Social Links in Sidebar */
+        .social-links {
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
             gap: var(--space-md);
+            padding-top: var(--space-lg);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        header img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border: 4px solid var(--light-accent);
+        .social-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-size: 1.25rem;
+            transition: all var(--transition-base);
         }
 
-        header .text-content {
-            text-align: center;
+        .social-link:hover {
+            background: var(--teal);
+            transform: translateY(-3px);
         }
 
-        header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: var(--font-size-3xl);
-            margin-bottom: 0.5rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-        }
-
-        header p {
-            font-size: 1rem;
-            font-weight: 300;
-            margin: 0.3rem 0;
-            letter-spacing: 0.5px;
-        }
-
-        header .university {
-            color: var(--accent-color);
-            font-weight: 500;
-            margin-top: 0.5rem;
-        }
-
-        /* Navigation */
-        nav {
+        /* ==================== MOBILE HEADER ==================== */
+        .mobile-header {
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-md) var(--space-lg);
+            background: linear-gradient(135deg, var(--primary-purple), var(--primary-purple-dark));
+            color: var(--white);
             position: sticky;
             top: 0;
-            background-color: white;
-            padding: 0.8rem 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
+            z-index: 999;
+            box-shadow: var(--shadow-md);
         }
 
-        .nav-toggle {
-            display: block;
+        .mobile-header h1 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .mobile-menu-toggle {
             background: none;
             border: none;
+            color: var(--white);
             font-size: 1.5rem;
-            color: var(--primary-color);
             cursor: pointer;
-            padding: 0.5rem;
-            position: absolute;
-            right: 1rem;
-            top: 0.5rem;
-            z-index: 1001;
+            padding: var(--space-xs);
+            transition: transform var(--transition-base);
         }
 
-        .nav-toggle:focus {
-            outline: 2px solid var(--highlight-color);
-            outline-offset: 2px;
+        .mobile-menu-toggle:hover {
+            transform: scale(1.1);
         }
 
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: none;
-            flex-direction: column;
-            gap: 0;
-            padding: 0 20px;
+        /* ==================== MAIN CONTENT ==================== */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            min-height: 100vh;
+            background: var(--bg-secondary);
+            padding: var(--space-xl);
         }
 
-        .nav-container.active {
-            display: flex;
-        }
-
-        nav a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-            padding: 0.75rem 1rem;
-            border-radius: var(--radius-sm);
-            border-bottom: 1px solid var(--border-color);
-            transition: background-color var(--transition-base) ease,
-                        color var(--transition-base) ease,
-                        transform var(--transition-base) ease;
-        }
-
-        nav a:hover {
-            background-color: var(--light-accent);
-            color: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-
-        /* ==================== SECTIONS ==================== */
-        section {
-            margin: var(--space-lg) auto;
-            padding: var(--space-lg);
-            background-color: white;
-            border-radius: var(--radius-lg);
+        .content-section {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-xl);
             box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-color);
-            scroll-margin-top: 80px;
+            scroll-margin-top: var(--space-xl);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all var(--transition-slow);
         }
 
-        section h2 {
-            color: var(--primary-color);
-            font-size: 2.2rem;
-            margin-bottom: var(--space-md);
-            font-family: 'Playfair Display', serif;
+        .content-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .content-section h2 {
+            font-family: var(--font-heading);
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            margin-bottom: var(--space-lg);
             position: relative;
-            padding-bottom: 0.5rem;
-            display: inline-block;
+            padding-bottom: var(--space-sm);
         }
 
-        section h2::after {
+        .content-section h2::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(to right, var(--highlight-color), var(--accent-color));
-            border-radius: 2px;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--teal), var(--emerald));
+            border-radius: var(--radius-full);
         }
 
         /* ==================== ABOUT SECTION ==================== */
@@ -273,135 +337,187 @@
         }
 
         .about-paragraph {
-            background: var(--background-color);
-            padding: var(--space-md);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
-            transition: transform var(--transition-base) ease,
-                        box-shadow var(--transition-base) ease;
+            background: var(--bg-secondary);
+            padding: var(--space-lg);
+            border-radius: var(--radius-lg);
+            border-left: 3px solid var(--teal);
+            transition: all var(--transition-base);
         }
 
         .about-paragraph:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transform: translateX(8px);
+            box-shadow: var(--shadow-md);
+            border-left-color: var(--emerald);
         }
 
         /* ==================== PROJECTS SECTION ==================== */
-        .projects-container {
+        .projects-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: var(--space-md);
+            gap: var(--space-lg);
         }
 
         .project-card {
-            background: var(--background-color);
-            border-left: 5px solid var(--highlight-color);
-            border-radius: var(--radius-md);
-            padding: var(--space-md);
-            box-shadow: var(--shadow-sm);
-            transition: transform var(--transition-base) ease,
-                        background var(--transition-base) ease,
-                        box-shadow var(--transition-base) ease,
-                        border-color var(--transition-base) ease;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            border-left: 4px solid var(--emerald);
+            transition: all var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle, var(--teal-light) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity var(--transition-base);
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            background: white;
+            transform: translateX(8px);
             box-shadow: var(--shadow-lg);
-            border-left-color: var(--accent-color);
+            border-left-color: var(--teal);
+        }
+
+        .project-card:hover::before {
+            opacity: 0.3;
         }
 
         .project-card h3 {
-            color: var(--primary-color);
-            font-size: var(--font-size-xl);
-            margin-bottom: 0.5rem;
-            font-family: 'Playfair Display', serif;
+            font-family: var(--font-heading);
+            font-size: 1.375rem;
+            color: var(--primary-purple);
+            margin-bottom: var(--space-sm);
+            font-weight: 600;
             line-height: 1.3;
         }
 
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin-bottom: var(--space-sm);
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .project-status {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
+            padding: 0.25rem 0.75rem;
+            background: var(--emerald-light);
+            color: var(--emerald-dark);
+            border-radius: var(--radius-full);
+            font-weight: 500;
+            font-size: 0.8125rem;
+        }
+
         .project-card p {
-            font-size: var(--font-size-base);
-            margin-bottom: 0.3rem;
-            color: var(--text-color);
-            line-height: 1.6;
+            margin-bottom: var(--space-sm);
+            line-height: 1.7;
         }
 
         .project-card strong {
-            color: var(--secondary-color);
+            color: var(--primary-purple);
         }
 
         /* ==================== TIMELINE (EDUCATION) ==================== */
         .timeline {
-            border-left: 3px solid var(--accent-color);
-            padding-left: 20px;
-            margin-top: var(--space-lg);
+            position: relative;
+            padding-left: var(--space-xl);
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-purple), var(--teal), var(--emerald));
         }
 
         .timeline-item {
-            margin-bottom: 25px;
-            padding: var(--space-md);
-            background: var(--background-color);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
             position: relative;
-            transition: transform var(--transition-base) ease,
-                        background var(--transition-base) ease;
-        }
-
-        .timeline-item:hover {
-            transform: translateX(10px);
-            background: white;
+            padding-bottom: var(--space-lg);
+            margin-bottom: var(--space-lg);
+            padding-left: var(--space-md);
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -29px;
-            top: 50%;
-            transform: translateY(-50%);
+            left: calc(-1 * var(--space-xl) - 6px);
+            top: 0;
             width: 15px;
             height: 15px;
-            border-radius: 50%;
-            background: var(--highlight-color);
-            border: 3px solid white;
-            transition: background var(--transition-base) ease;
+            border-radius: var(--radius-full);
+            background: var(--teal);
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 3px var(--teal-light);
+            animation: pulse 2s ease-in-out infinite;
         }
 
-        .timeline-item:hover::before {
-            background: var(--accent-color);
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 3px var(--teal-light);
+            }
+            50% {
+                box-shadow: 0 0 0 6px var(--teal-light);
+            }
         }
 
         .timeline-item strong {
-            color: var(--primary-color);
-            font-size: var(--font-size-lg);
             display: block;
+            font-family: var(--font-heading);
+            font-size: 1.125rem;
+            color: var(--primary-purple);
             margin-bottom: var(--space-xs);
-            font-family: 'Playfair Display', serif;
+            font-weight: 600;
         }
 
-        /* Course Highlights */
         .course-highlights {
-            background: var(--light-accent);
-            padding: 1rem;
+            background: var(--bg-secondary);
+            padding: var(--space-md);
             border-radius: var(--radius-md);
-            margin-top: 10px;
+            margin-top: var(--space-md);
+            border-left: 3px solid var(--emerald);
+        }
+
+        .course-highlights h3 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            color: var(--primary-purple);
+            margin-bottom: var(--space-sm);
         }
 
         .course-highlights ul {
             list-style: none;
-            margin-left: 20px;
+            padding-left: 0;
+        }
+
+        .course-highlights ul li {
+            margin-bottom: var(--space-xs);
+            padding-left: 1.5rem;
+            position: relative;
         }
 
         .course-highlights ul li::before {
             content: '•';
-            color: var(--secondary-color);
+            color: var(--emerald);
             position: absolute;
             left: 0;
             font-weight: bold;
         }
 
-        /* ==================== RESEARCH INTERESTS & PUBLICATIONS ==================== */
+        /* ==================== LISTS ==================== */
         ul {
             list-style-type: none;
             padding-left: 0;
@@ -415,283 +531,236 @@
 
         ul li::before {
             content: '•';
-            color: var(--highlight-color);
+            color: var(--teal);
             position: absolute;
             left: 0;
             font-weight: bold;
+            font-size: 1.2rem;
         }
 
         /* ==================== CONTACT SECTION ==================== */
-        .contact-links {
+        .contact-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: var(--space-md);
-            margin-top: var(--space-md);
+            margin-bottom: var(--space-lg);
         }
 
-        .contact-link {
+        .contact-card {
             display: flex;
             align-items: center;
-            padding: 1.2rem;
-            background: var(--background-color);
-            border-radius: var(--radius-md);
+            gap: var(--space-sm);
+            padding: var(--space-md);
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
             text-decoration: none;
-            color: var(--text-color);
-            border: 1px solid var(--border-color);
-            transition: transform var(--transition-base) ease,
-                        background var(--transition-base) ease,
-                        border-color var(--transition-base) ease,
-                        box-shadow var(--transition-base) ease;
+            color: var(--text-primary);
+            transition: all var(--transition-base);
+            border: 2px solid transparent;
         }
 
-        .contact-link:hover {
-            transform: translateX(5px);
-            background: white;
-            border-color: var(--accent-color);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        .contact-card:hover {
+            border-color: var(--primary-purple);
+            background: var(--white);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
 
-        .contact-link i {
-            margin-right: 15px;
-            color: var(--secondary-color);
-            font-size: 1.4rem;
-            width: 24px;
-            text-align: center;
-            transition: color var(--transition-base) ease;
-        }
-
-        .contact-link:hover i {
-            color: var(--highlight-color);
-        }
-
-        /* Email Container */
-        .email-container {
-            margin-top: var(--space-md);
-            padding: 1.2rem;
-            background: var(--background-color);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--border-color);
+        .contact-icon {
+            width: 45px;
+            height: 45px;
             display: flex;
             align-items: center;
-            transition: background var(--transition-base) ease,
-                        border-color var(--transition-base) ease;
+            justify-content: center;
+            border-radius: var(--radius-md);
+            background: linear-gradient(135deg, var(--primary-purple), var(--teal));
+            color: var(--white);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            transition: transform var(--transition-base);
         }
 
-        .email-container:hover {
-            background: white;
-            border-color: var(--accent-color);
+        .contact-card:hover .contact-icon {
+            transform: rotate(10deg) scale(1.1);
         }
 
-        .email-container i {
-            color: var(--secondary-color);
-            font-size: 1.4rem;
-            margin-right: 15px;
-            transition: color var(--transition-base) ease;
+        .contact-label {
+            font-weight: 500;
+            font-size: 0.9375rem;
         }
 
-        .email-container:hover i {
-            color: var(--highlight-color);
+        .email-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
         }
 
-        .email-container a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color var(--transition-base) ease;
+        .email-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding: var(--space-md);
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            border: 2px solid transparent;
+            transition: all var(--transition-base);
         }
 
-        .email-container a:hover {
-            color: var(--secondary-color);
+        .email-item:hover {
+            border-color: var(--teal);
+            background: var(--white);
+            transform: translateX(8px);
         }
 
-        /* ==================== FOOTER ==================== */
-        footer {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 30px;
+        .email-item i {
+            color: var(--teal);
+            font-size: 1.25rem;
         }
 
-        /* ==================== MEDIA QUERIES (MOBILE-FIRST) ==================== */
+        .email-item a {
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color var(--transition-base);
+        }
 
-        /* Small devices (landscape phones, 480px and up) */
-        @media (min-width: 480px) {
-            header h1 {
-                font-size: 2rem;
+        .email-item:hover a {
+            color: var(--primary-purple);
+        }
+
+        /* ==================== RESPONSIVE DESIGN ==================== */
+
+        /* Tablet (768px - 1023px) */
+        @media (max-width: 1023px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: var(--space-lg) 0;
             }
 
-            .contact-links {
+            .sidebar-nav {
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: var(--space-sm);
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: var(--space-lg);
+            }
+
+            .projects-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        /* Medium devices (tablets, 768px and up) */
-        @media (min-width: 768px) {
-            body {
-                line-height: 1.8;
+        /* Mobile (<768px) */
+        @media (max-width: 767px) {
+            .sidebar {
+                transform: translateX(-100%);
+                transition: transform var(--transition-base);
+                position: fixed;
+                height: 100vh;
+                width: 280px;
             }
 
-            header img {
-                width: 200px;
-                height: 200px;
+            .sidebar.active {
+                transform: translateX(0);
             }
 
-            header h1 {
-                font-size: 2.5rem;
+            .mobile-header {
+                display: flex;
             }
 
-            header p {
-                font-size: 1.1rem;
+            .main-content {
+                margin-left: 0;
+                padding: var(--space-md);
             }
 
-            .nav-toggle {
-                display: none;
-            }
-
-            .nav-container {
-                display: flex !important;
-                flex-direction: row;
-                gap: 1rem;
-            }
-
-            nav a {
-                border-bottom: none;
-                padding: 0.5rem 1rem;
-            }
-
-            section {
-                margin: var(--space-xl) auto;
-                padding: var(--space-xl);
-            }
-
-            section h2 {
-                font-size: 2rem;
-            }
-
-            .projects-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--space-lg);
-            }
-
-            .project-card {
+            .content-section {
                 padding: var(--space-lg);
             }
 
-            .timeline {
-                padding-left: 30px;
+            .content-section h2 {
+                font-size: 1.75rem;
             }
 
-            .timeline-item {
-                padding: var(--space-lg);
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
 
-            .timeline-item::before {
-                width: 18px;
-                height: 18px;
-                left: -39px;
-            }
-        }
-
-        /* Large devices (desktops, 1024px and up) */
-        @media (min-width: 1024px) {
-            header {
-                flex-direction: row;
-                padding: 40px 10%;
-                gap: 2rem;
+            .contact-grid {
+                grid-template-columns: 1fr;
             }
 
-            header img {
-                width: 300px;
-                height: 300px;
-            }
-
-            header .text-content {
-                text-align: left;
-            }
-
-            header h1 {
-                font-size: 2.8rem;
-            }
-
-            header p {
-                font-size: 1.2rem;
-            }
-
-            .nav-container {
-                gap: 2rem;
-            }
-
-            section {
-                margin: var(--space-2xl) auto;
-                padding: 2.5rem;
-            }
-
-            section h2 {
-                font-size: 2.2rem;
-            }
-
-            .contact-links {
-                grid-template-columns: repeat(4, 1fr);
-                gap: var(--space-lg);
-            }
-        }
-
-        /* Extra large devices (large desktops, 1200px and up) */
-        @media (min-width: 1200px) {
             .about-content {
-                grid-template-columns: repeat(2, 1fr);
-                gap: var(--space-xl);
+                gap: var(--space-sm);
             }
+        }
 
-            .about-paragraph:last-child {
-                grid-column: 1 / -1;
-            }
-
-            .projects-container {
-                gap: var(--space-xl);
-            }
+        /* Focus styles for accessibility */
+        *:focus-visible {
+            outline: 2px solid var(--emerald);
+            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
-    <a href="#home" class="skip-link">Skip to main content</a>
-    <div class="header-wrapper">
-        <header>
-            <img src="Selin_Cildir_Headshot.JPG"
-                 alt="Selin Cildir, Master of Research Student"
-                 loading="eager"
-                 decoding="async"
-                 width="300"
-                 height="300">
-            <div class="text-content">
-                <h1>Selin Cildir</h1>
-                <p>Master of Research Student</p>
-                <p>College of Health</p>
-                <p class="university">Adelaide University, Australia</p>
+    <!-- Sidebar Navigation (Desktop) -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-content">
+            <div class="profile-section">
+                <img src="Selin_Cildir_Headshot.JPG"
+                     alt="Selin Cildir, Master of Research Student"
+                     class="profile-image"
+                     loading="eager"
+                     width="140"
+                     height="140">
+                <h1 class="profile-name">Selin Cildir</h1>
+                <p class="profile-title">Master of Research Student</p>
+                <p class="profile-institution">Adelaide University, Australia</p>
             </div>
-        </header>
-    </div>
 
-    <!-- Navigation -->
-<nav>
-    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <i class="fa-solid fa-bars"></i>
-    </button>
-    <div class="nav-container">
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#research">Research Interests</a>
-        <a href="#publications">Publications & Awards</a>
-        <a href="#timeline">Education</a>
-        <a href="#memberships">Professional Memberships</a>
-        <a href="#contact">Contact</a>
-    </div>
-</nav>
+            <nav class="sidebar-nav">
+                <a href="#about" class="nav-link active">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#research" class="nav-link">Research Interests</a>
+                <a href="#publications" class="nav-link">Publications & Awards</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#memberships" class="nav-link">Memberships</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
 
-    <!-- Main Content Container -->
-    <div class="container">
+            <div class="social-links">
+                <a href="https://orcid.org/0009-0003-5456-3335" target="_blank" class="social-link" title="ORCID">
+                    <i class="fa-brands fa-orcid"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/selincildir/" target="_blank" class="social-link" title="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://x.com/selin_cildir" target="_blank" class="social-link" title="X (Twitter)">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="https://www.github.com/selincildir/" target="_blank" class="social-link" title="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Mobile Header (Hidden on Desktop) -->
+    <header class="mobile-header">
+        <h1>Selin Cildir</h1>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
         <!-- About Section -->
-        <section id="home">
+        <section id="about" class="content-section">
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-paragraph">
@@ -708,42 +777,51 @@
                 </div>
             </div>
         </section>
-<!-- Projects Section -->
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-container">
 
-        <div class="project-card">
-            <h3>Genetic Architecture of Lipoedema: Rare-Variant Mapping across Lymphatic Development, Connective-Tissue Biology, and Adipose Distribution</h3>
-            <p><strong>Status:</strong> Ongoing</p>
-            <p><strong>Supervisors:</strong> A/Prof. Chung Hoow Kok, Prof. Hamish Scott, Prof. Natasha Harvey, and Dr Kelly Betterman</p>
-            <p><strong>Summary:</strong>This project investigates the genetic basis of lipoedema, a chronic and complex adipose‑tissue disorder characterised by disproportionate, painful fat accumulation and frequently associated with lymphatic and connective‑tissue abnormalities. Despite its prevalence and clinical burden, the molecular mechanisms underlying lipoedema remain poorly defined. The overarching aim of this research is to advance foundational understanding of the disease's genetic architecture and identify biological pathways that may contribute to its development and progression. This work is undertaken as part of my Master of Research at Adelaide University within the College of Health and Medical Sciences.</p>
-        </div>
+        <!-- Projects Section -->
+        <section id="projects" class="content-section">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Genetic Architecture of Lipoedema: Rare-Variant Mapping across Lymphatic Development, Connective-Tissue Biology, and Adipose Distribution</h3>
+                    <div class="project-meta">
+                        <span class="project-status">Ongoing</span>
+                        <span><strong>Supervisors:</strong> A/Prof. Chung Hoow Kok, Prof. Hamish Scott, Prof. Natasha Harvey, Dr Kelly Betterman</span>
+                    </div>
+                    <p><strong>Summary:</strong> This project investigates the genetic basis of lipoedema, a chronic and complex adipose‑tissue disorder characterised by disproportionate, painful fat accumulation and frequently associated with lymphatic and connective‑tissue abnormalities. Despite its prevalence and clinical burden, the molecular mechanisms underlying lipoedema remain poorly defined. The overarching aim of this research is to advance foundational understanding of the disease's genetic architecture and identify biological pathways that may contribute to its development and progression. This work is undertaken as part of my Master of Research at Adelaide University within the College of Health and Medical Sciences.</p>
+                </div>
 
-        <div class="project-card">
-            <h3>Cloud-Integrated Building Management System for Environmental Monitoring in Medical Laboratories Using Node-RED</h3>
-            <p><strong>Status:</strong> Completed</p>
-            <p><strong>Supervisor:</strong> Associate Professor Alireza Jolfaei, Cybersecurity and Networking in the College of Science and Engineering, Flinders University, Adelaide, South Australia, Australia</p>
-            <p><strong>Summary:</strong>As part of a Cloud and Distributed Computing course at Flinders University, I developed a cloud-integrated Building Management System (BMS) tailored for medical laboratory environments using Node-RED. This system simulates temperature, humidity and air-quality readings, validates and classifies them against safety thresholds, and then seamlessly logs and visualises the results while triggering alerts when conditions fall outside acceptable ranges. Simulated sensor data is generated (20–35 °C for temperature, 30–70 % for humidity, 0–150 AQI) and processed via JavaScript function nodes that flag extremes and categorise air quality as 'Good', 'Moderate' or 'Poor'; readings breaching preset thresholds (e.g. >30 °C, <35 % or >65 % humidity, AQI >100) automatically generate email notifications through Gmail SMTP. Concurrently, each data point is written in tabular form to Google Sheets and stored as structured JSON documents in Google Firestore, while a live Node-RED Dashboard radar chart provides real-time visual feedback.</p>
-        </div>
+                <div class="project-card">
+                    <h3>Cloud-Integrated Building Management System for Environmental Monitoring in Medical Laboratories Using Node-RED</h3>
+                    <div class="project-meta">
+                        <span class="project-status" style="background: var(--neutral-300); color: var(--neutral-700);">Completed</span>
+                        <span><strong>Supervisor:</strong> A/Prof. Alireza Jolfaei, Flinders University</span>
+                    </div>
+                    <p><strong>Summary:</strong> As part of a Cloud and Distributed Computing course at Flinders University, I developed a cloud-integrated Building Management System (BMS) tailored for medical laboratory environments using Node-RED. This system simulates temperature, humidity and air-quality readings, validates and classifies them against safety thresholds, and then seamlessly logs and visualises the results while triggering alerts when conditions fall outside acceptable ranges.</p>
+                </div>
 
-        <div class="project-card">
-            <h3>Investigating Immune Function in IKKα: T and B Cell Profiling in Health and Disease via Genetic Demultiplexing of scRNA-Seq</h3>
-            <p><strong>Status:</strong> Completed</p>
-            <p><strong>Supervisor:</strong> Dr. Nick Warnock, Centre for Cancer Biology, Adelaide, South Australia, Australia</p>
-            <p><strong>Summary:</strong>This study employed single-cell RNA sequencing (scRNA-seq) and genetic demultiplexing to investigate immune function in individuals with the G167R homozygous germline mutation in the IKKα (CHUK) gene (chr10:100219335). Peripheral blood mononuclear cells (PBMCs) were used for both bulk RNA-seq and scRNA-seq experiments, with bulk RNA-seq serving as a genetic reference to assign cells to their respective donors (HC1, HC2, HC3, Patient1) in the scRNA-seq dataset. The pipeline involved STAR for bulk RNA-seq read alignment, VarDict for SNP calling from bulk RNA-seq, and cellSNP-lite for SNP calling from scRNA-seq. Vireo was then used to demultiplex pooled scRNA-seq samples based on the detected SNPs. The Cell Ranger Multi Pipeline (v9.0.0) was implemented to generate the feature-barcode matrix, which was subsequently analyzed using Seurat in R. The study applied various R packages, including dplyr for data manipulation, ggplot2 and patchwork for visualization, scDblFinder for doublet detection, Azimuth for cell type annotation, and tibble for structured data handling. The primary objective was to analyze T and B cell heterogeneity and perform cell-type-specific differential gene expression analysis, focusing on the impact of the homozygous CHUK mutation on NF-κB signaling, immune cell composition, and transcriptional differences across healthy and disease conditions.</p>
-        </div>
+                <div class="project-card">
+                    <h3>Investigating Immune Function in IKKα: T and B Cell Profiling in Health and Disease via Genetic Demultiplexing of scRNA-Seq</h3>
+                    <div class="project-meta">
+                        <span class="project-status" style="background: var(--neutral-300); color: var(--neutral-700);">Completed</span>
+                        <span><strong>Supervisor:</strong> Dr. Nick Warnock, Centre for Cancer Biology, Adelaide</span>
+                    </div>
+                    <p><strong>Summary:</strong> This study employed single-cell RNA sequencing (scRNA-seq) and genetic demultiplexing to investigate immune function in individuals with the G167R homozygous germline mutation in the IKKα (CHUK) gene. The pipeline involved STAR for bulk RNA-seq read alignment, VarDict for SNP calling from bulk RNA-seq, and cellSNP-lite for SNP calling from scRNA-seq. Vireo was then used to demultiplex pooled scRNA-seq samples based on the detected SNPs.</p>
+                </div>
 
-        <div class="project-card">
-            <h3>Smart Manufacturing Dashboard: An Intuitive Web App for Monitoring and Managing Factory Operations</h3>
-            <p><strong>Status:</strong> Completed</p>
-            <p><strong>Supervisor:</strong> Dr. Brett Wilkinson, Senior Lecturer in Computer Science and Information Technology, Flinders University, Adelaide, South Australia, Australia</p>
-            <p><strong>Summary:</strong>Developed a web-based dashboard for real-time monitoring and management of factory operations, designed for Administrators, Factory Managers, Production Operators, and Auditors. The platform provides CRUD (Create, Read, Update, Delete) functionalities for managing machines, jobs, and maintenance requests, featuring real-time alerts and performance analytics to support data-driven decision-making. This project was undertaken as part of the "Human Factors for Interactive and Web-Based Systems" topic during my second year in the Bachelor of Science degree at Flinders University. Collaborating with a team of four peers, we built and deployed the web application within three months, utilizing: Technologies HTML, PHP, JavaScript, SQL; Deployment: XAMPP server; Collaboration Platforms: GitHub, Miro. The project successfully demonstrated team-based software development, UI/UX considerations, and real-time data integration in a manufacturing context.</p>
-        </div>
-    </div>
-</section>
+                <div class="project-card">
+                    <h3>Smart Manufacturing Dashboard: An Intuitive Web App for Monitoring and Managing Factory Operations</h3>
+                    <div class="project-meta">
+                        <span class="project-status" style="background: var(--neutral-300); color: var(--neutral-700);">Completed</span>
+                        <span><strong>Supervisor:</strong> Dr. Brett Wilkinson, Flinders University</span>
+                    </div>
+                    <p><strong>Summary:</strong> Developed a web-based dashboard for real-time monitoring and management of factory operations, designed for Administrators, Factory Managers, Production Operators, and Auditors. The platform provides CRUD (Create, Read, Update, Delete) functionalities for managing machines, jobs, and maintenance requests, featuring real-time alerts and performance analytics to support data-driven decision-making.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Research Interests Section -->
-        <section id="research">
+        <section id="research" class="content-section">
             <h2>Research Interests</h2>
             <ul>
                 <li>Transcriptomics</li>
@@ -752,63 +830,38 @@
             </ul>
         </section>
 
-                    <!-- Publications Section -->
-<section id="publications">
-  <h2>Publications &amp; Awards</h2>
-  <ul>
-    
-    <!-- Publication -->
-    <li>Catak MC, Surucu N, Bayram Catak F, Kara A, <strong><u>Cildir S</u></strong>, Babayeva R, Kayaoglu B, Bulutoglu A, Erman B, Karakus IS, Al-Shaibi A, Hubrack S, Karabiber E, Celebi Celik F, Akgun G, Baser D, Bilgic Eltan S, Sefer AP, Bozkurt S, Ozturk N, Kiykim A, Aydogmus C, Genel F, Gulez N, Yucel E, Yildiran A, Metin A, Karakoc-Aydiner E, Ozen A, Gursel M, Cildir G, Lo B, Baris S. <strong>"Abatacept Restores Dysregulated Transcriptomic and Proteomic Profiling in LRBA Deficiency and CTLA-4 Insufficiency."</strong> <strong>Journal of Allergy and Clinical Immunology (JACI) (IF: 11.2), 2025 Sep 16:S0091-6749(25)00946-7.</strong> DOI: <a href="https://doi.org/10.1016/j.jaci.2025.08.027" target="_blank">10.1016/j.jaci.2025.08.027</a></li>
+        <!-- Publications & Awards Section -->
+        <section id="publications" class="content-section">
+            <h2>Publications & Awards</h2>
+            <ul>
+                <li>Catak MC, Surucu N, Bayram Catak F, Kara A, <strong><u>Cildir S</u></strong>, Babayeva R, Kayaoglu B, Bulutoglu A, Erman B, Karakus IS, Al-Shaibi A, Hubrack S, Karabiber E, Celebi Celik F, Akgun G, Baser D, Bilgic Eltan S, Sefer AP, Bozkurt S, Ozturk N, Kiykim A, Aydogmus C, Genel F, Gulez N, Yucel E, Yildiran A, Metin A, Karakoc-Aydiner E, Ozen A, Gursel M, Cildir G, Lo B, Baris S. <strong>"Abatacept Restores Dysregulated Transcriptomic and Proteomic Profiling in LRBA Deficiency and CTLA-4 Insufficiency."</strong> <strong>Journal of Allergy and Clinical Immunology (JACI) (IF: 11.2), 2025 Sep 16:S0091-6749(25)00946-7.</strong> DOI: <a href="https://doi.org/10.1016/j.jaci.2025.08.027" target="_blank" style="color: var(--teal); text-decoration: underline;">10.1016/j.jaci.2025.08.027</a></li>
 
-    <!-- Awards -->
-    <li>
-      <strong>May 2025:</strong> Chancellor’s Letter of Commendation for Academic Excellence — 
-      Flinders University, Australia.  
-      <em>Awarded to students who demonstrate outstanding academic achievement and rank among the top performers in their course based on exceptional GPA.</em>
-    </li>
+                <li><strong>May 2025:</strong> Chancellor's Letter of Commendation for Academic Excellence — Flinders University, Australia. <em>Awarded to students who demonstrate outstanding academic achievement and rank among the top performers in their course based on exceptional GPA.</em></li>
 
-    <li>
-      <strong>2024/2025:</strong> Fuss Family Summer Vacation Top Up Scholarship (AU$800).  
-      <em>Project:</em> "Investigating Immune Function in IKKα: T and B Cell Profiling in Health and Disease via Genetic Demultiplexing of scRNA-Seq".
-    </li>
+                <li><strong>2024/2025:</strong> Fuss Family Summer Vacation Top Up Scholarship (AU$800). <em>Project:</em> "Investigating Immune Function in IKKα: T and B Cell Profiling in Health and Disease via Genetic Demultiplexing of scRNA-Seq".</li>
 
-    <li>
-      <strong>Jan–Feb 2025:</strong> UniSA Vacation Research Scholarship (AU$3000, 8 weeks).  
-      <em>Project:</em> "Investigating Immune Function in IKKα: T and B Cell Profiling in Health and Disease via Genetic Demultiplexing of scRNA-Seq".
-    </li>
+                <li><strong>Jan–Feb 2025:</strong> UniSA Vacation Research Scholarship (AU$3000, 8 weeks). <em>Project:</em> "Investigating Immune Function in IKKα: T and B Cell Profiling in Health and Disease via Genetic Demultiplexing of scRNA-Seq".</li>
 
-    <li>
-      <strong>2024:</strong> Student Essay Award, 2nd Place —  
-      "From Evolution to AI Revolution: The Growing Child of Genetics".  
-      <em>19th Annual Symposium of the Human Genetics Society of Australasia (HGSA), SA Branch.</em>
-    </li>
+                <li><strong>2024:</strong> Student Essay Award, 2nd Place — "From Evolution to AI Revolution: The Growing Child of Genetics". <em>19th Annual Symposium of the Human Genetics Society of Australasia (HGSA), SA Branch.</em></li>
 
-    <li>
-      <strong>2024:</strong> Outstanding Academic Achievement in Bachelor of Science (Flinders University 2024 Cohort).  
-      <em>Eligibility to join Golden Key International Honour Society based on achieving a top 15% ranking in the chosen field of study.</em>
-    </li>
+                <li><strong>2024:</strong> Outstanding Academic Achievement in Bachelor of Science (Flinders University 2024 Cohort). <em>Eligibility to join Golden Key International Honour Society based on achieving a top 15% ranking in the chosen field of study.</em></li>
 
-    <li>
-      <strong>2008:</strong> Erasmus Student Exchange Scholarship (4500 EUR).  
-      <em>Selected for a prestigious Erasmus Exchange Program to study at Politecnico di Torino in Italy for one semester. Sole representative from the Textile Engineering department at Ege University, Turkiye, securing the scholarship based on outstanding academic performance and English language exam results.</em>
-    </li>
+                <li><strong>2008:</strong> Erasmus Student Exchange Scholarship (4500 EUR). <em>Selected for a prestigious Erasmus Exchange Program to study at Politecnico di Torino in Italy for one semester. Sole representative from the Textile Engineering department at Ege University, Turkiye, securing the scholarship based on outstanding academic performance and English language exam results.</em></li>
+            </ul>
+        </section>
 
-  </ul>
-</section>
-
-  
-    
         <!-- Education Timeline Section -->
-        <section id="timeline">
+        <section id="education" class="content-section">
             <h2>Education</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <strong>2026 - Ongoing:</strong> Master of Research, College of Health, Adelaide University, Australia
                 </div>
+
                 <div class="timeline-item">
                     <strong>2023 - 2025:</strong> Bachelor of Science (Molecular Biology and Computing), Flinders University, Australia
                     - <strong>cumulative GPA 6.77 out of 7.00</strong>
-                 <div class="course-highlights">
+                    <div class="course-highlights">
                         <h3>Degree Highlights:</h3>
                         <ul>
                             <li>Human Bioscience</li>
@@ -829,101 +882,149 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="timeline-item">
                     <strong>2006 - 2011:</strong> Bachelor of Textile Engineering, Ege University, Turkiye
                 </div>
+
                 <div class="timeline-item">
                     <strong>2008 - 2009:</strong> Exchange Program in Textile Engineering, Polytechnic University of Turin, Italy
                 </div>
             </div>
         </section>
 
-                     <!-- Professional Memberships -->
-    <section id="memberships">
-        <h2>Professional Memberships</h2>
-        <ul>
-           <li>ABACBS - Australian Bioinformatics and Computational Biology Society</li>
-           <li>COMBINE - Australian Computational Biology and Bioinformatics Student Society</li>
-           <li>WiSE - Women in Science and Engineering, Flinders University</li> 
-           <li>Golden Key International Honour Society</li> 
-        </ul>
-    </section>
-  
+        <!-- Professional Memberships Section -->
+        <section id="memberships" class="content-section">
+            <h2>Professional Memberships</h2>
+            <ul>
+                <li>ABACBS - Australian Bioinformatics and Computational Biology Society</li>
+                <li>COMBINE - Australian Computational Biology and Bioinformatics Student Society</li>
+                <li>WiSE - Women in Science and Engineering, Flinders University</li>
+                <li>Golden Key International Honour Society</li>
+            </ul>
+        </section>
 
         <!-- Contact Section -->
-        <section id="contact">
+        <section id="contact" class="content-section">
             <h2>Contact</h2>
-            <div class="contact-links">
-                <a href="https://orcid.org/0009-0003-5456-3335" target="_blank" class="contact-link">
-                    <i class="fa-brands fa-orcid"></i>ORCID Profile
+            <div class="contact-grid">
+                <a href="https://orcid.org/0009-0003-5456-3335" target="_blank" class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-orcid"></i>
+                    </div>
+                    <span class="contact-label">ORCID Profile</span>
                 </a>
-                <a href="https://www.linkedin.com/in/selincildir/" target="_blank" class="contact-link">
-                    <i class="fa-brands fa-linkedin"></i>LinkedIn Profile
+                <a href="https://www.linkedin.com/in/selincildir/" target="_blank" class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </div>
+                    <span class="contact-label">LinkedIn Profile</span>
                 </a>
-                <a href="https://x.com/selin_cildir" target="_blank" class="contact-link">
-                    <i class="fa-brands fa-x-twitter"></i>X Profile
+                <a href="https://x.com/selin_cildir" target="_blank" class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </div>
+                    <span class="contact-label">X Profile</span>
                 </a>
-                <a href="https://www.github.com/selincildir/" target="_blank" class="contact-link">
-                    <i class="fa-brands fa-github"></i>GitHub Portfolio
+                <a href="https://www.github.com/selincildir/" target="_blank" class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fa-brands fa-github"></i>
+                    </div>
+                    <span class="contact-label">GitHub Portfolio</span>
                 </a>
             </div>
-            <div class="email-container">
-                <i class="fa-solid fa-envelope"></i>
-                <a href="mailto:selincildir@gmail.com">selincildir@gmail.com</a>
-            </div>
-            <div class="email-container">
-                <i class="fa-solid fa-envelope"></i>
-                <a href="mailto:selin.cildir@adelaide.edu.au">selin.cildir@adelaide.edu.au</a>
+
+            <div class="email-list">
+                <div class="email-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:selincildir@gmail.com">selincildir@gmail.com</a>
+                </div>
+                <div class="email-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:selin.cildir@adelaide.edu.au">selin.cildir@adelaide.edu.au</a>
+                </div>
             </div>
         </section>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy;2026 Selin Cildir. Designed & Created by Selin Cildir. All Rights Reserved.</p>
-    </footer>
+    </main>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const navToggle = document.querySelector('.nav-toggle');
-        const navContainer = document.querySelector('.nav-container');
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const sidebar = document.getElementById('sidebar');
 
-        if (navToggle) {
-            navToggle.addEventListener('click', function() {
-                navContainer.classList.toggle('active');
-                const isExpanded = navContainer.classList.contains('active');
-                navToggle.setAttribute('aria-expanded', isExpanded);
+        mobileMenuToggle.addEventListener('click', function() {
+            sidebar.classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (sidebar.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
 
-                const icon = navToggle.querySelector('i');
-                if (isExpanded) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
+        // Close mobile menu when clicking a nav link
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth < 768) {
+                    sidebar.classList.remove('active');
+                    const icon = mobileMenuToggle.querySelector('i');
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
                 }
             });
+        });
 
-            // Close menu when clicking nav link
-            const navLinks = navContainer.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth < 768) {
-                        navContainer.classList.remove('active');
-                        navToggle.setAttribute('aria-expanded', 'false');
-                        const icon = navToggle.querySelector('i');
-                        icon.classList.remove('fa-times');
-                        icon.classList.add('fa-bars');
-                    }
-                });
+        // Active navigation highlighting on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('.content-section');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
             });
-        }
-    });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll-triggered fade-in animation using Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.content-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Trigger visibility for sections already in view on page load
+        setTimeout(() => {
+            document.querySelectorAll('.content-section').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    section.classList.add('visible');
+                }
+            });
+        }, 100);
     </script>
 </body>
 </html>
-
-
-
-
-
